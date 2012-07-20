@@ -1,0 +1,12 @@
+{% if post_list %}
+	{% for post in post_list %}
+		<article>
+			{{post.date_published.month}}
+		{% autoescape off %}
+			{{ post.body_html }}
+		{% endautoescape %}
+		</article>
+	{% endfor %}
+{% else %}
+	<p>There are no posts.</p>
+{% endif %}
