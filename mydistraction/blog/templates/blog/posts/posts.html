@@ -1,7 +1,7 @@
 {% if post_list %}
 	{% for post in post_list %}
 		<article>
-			{{post.date_published.month}}
+			{{post.date_published}}
 		{% autoescape off %}
 			{{ post.body_html }}
 		{% endautoescape %}

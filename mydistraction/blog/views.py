@@ -1,8 +1,7 @@
 from django.views.generic import ListView
-from blog.models import Post
 import datetime
 
-#def posts_by_date(request, year, month, date):
+
 def posts_by_date(request, *args, **kwargs):
     now = datetime.datetime.now()
     year = kwargs['year']
@@ -21,5 +20,18 @@ def posts_by_date(request, *args, **kwargs):
     return ListView.as_view(
         queryset = list,
         context_object_name = 'post_list',
-        template_name = 'blog/posts.html'
+        template_name = 'blog/posts/posts.html'
+    )(request, *args, **kwargs)
+
+
+def posts_by_author(request, *args, **kwargs):
+    author = kwargs['author']
+
+    list = Post.objects
+    if(author):
+        list = list.filter(author__name=author)
+    return ListView.as_view(
+        queryset = list,
+        context_object_name = 'post_list',
+        template_name = 'blog/posts/posts.html'
     )(request, *args, **kwargs)
