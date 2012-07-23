@@ -1,0 +1,310 @@
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 58, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+body {
+  font-size: 100%;
+  line-height: 1.5em;
+}
+
+/* line 62, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html > body {
+  font-size: 16px;
+}
+
+/* line 16, ../sass/screen.scss */
+body {
+  font-family: "Palatino";
+  margin-top: 4.5em;
+}
+
+/* line 22, ../sass/screen.scss */
+.titleBlock {
+  margin-left: 0.75em;
+  margin-right: 0.75em;
+}
+/* line 28, ../sass/screen.scss */
+.titleBlock progress {
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2px;
+  margin: -1px;
+  color: #2277ee;
+  background-color: #eeeeee !important;
+  border: none;
+}
+/* line 38, ../sass/screen.scss */
+.titleBlock progress::-moz-progress-bar {
+  background: #2277ee;
+}
+/* line 42, ../sass/screen.scss */
+.titleBlock progress::-webkit-progress-value {
+  background: #2277ee;
+}
+/* line 46, ../sass/screen.scss */
+.titleBlock progress::-webkit-progress-bar {
+  background: #eeeeee;
+}
+/* line 50, ../sass/screen.scss */
+.titleBlock progress[aria-valuenow] {
+  background: #eeeeee;
+}
+/* line 54, ../sass/screen.scss */
+.titleBlock progress[aria-valuenow]:before {
+  background: #2277ee;
+}
+
+/* line 59, ../sass/screen.scss */
+a {
+  color: #2277ee;
+  text-decoration: none;
+}
+/* line 62, ../sass/screen.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 71, ../sass/screen.scss */
+h1 {
+  font-size: 2em;
+  line-height: 1.5em;
+  font-weight: normal;
+}
+
+/* line 76, ../sass/screen.scss */
+h2 {
+  font-size: 1.5em;
+  line-height: 2em;
+  font-weight: normal;
+}
+
+/* line 81, ../sass/screen.scss */
+h3 {
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+
+/* line 86, ../sass/screen.scss */
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+  text-decoration: underline;
+}
+
+/* line 92, ../sass/screen.scss */
+#posts header {
+  display: block;
+  letter-spacing: 2px;
+  -webkit-column-span: all;
+  -moz-column-span: all;
+}
+
+/* line 103, ../sass/screen.scss */
+article {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+/* line 111, ../sass/screen.scss */
+article aside {
+  text-align: center;
+}
+/* line 115, ../sass/screen.scss */
+article footer {
+  text-align: center;
+}
+/* line 119, ../sass/screen.scss */
+article section {
+  margin-bottom: 1.5em;
+}
+/* line 120, ../sass/screen.scss */
+article section header {
+  margin: auto;
+  text-align: center;
+}
+/* line 128, ../sass/screen.scss */
+article section .copy {
+  -webkit-column-width: 24em;
+  -moz-column-width: 24em;
+  -o-column-width: 24em;
+  column-width: 24em;
+  -webkit-column-gap: 3em;
+  -moz-column-gap: 3em;
+  -o-column-gap: 3em;
+  column-gap: 3em;
+  margin: auto;
+  padding: 1.5em;
+}
+/* line 135, ../sass/screen.scss */
+article section .copy p {
+  				/*
+  					Commenting this out because it was only affecting Opera, and
+  					Opera didn't handle it well.
+  
+  					Short sections would only spawn a left column, even though
+  					the layout is centered.  
+  
+  					The way that paragraphs are laid out also seems to be a little weird.
+  
+  					This particular attribute doesn't appear to be ready for 
+  					prime time.
+  				*/
+}
+/* line 152, ../sass/screen.scss */
+article section .singleCol {
+  -webkit-column-width: auto;
+  -moz-column-width: auto;
+  -o-column-width: auto;
+  column-width: auto;
+  max-width: 33em;
+}
+
+/* line 161, ../sass/screen.scss */
+#mainHeader {
+  -webkit-box-shadow: 0px 5px 10px #999999;
+  -moz-box-shadow: 0px 5px 10px #999999;
+  box-shadow: 0px 5px 10px #999999;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+/* line 169, ../sass/screen.scss */
+#mainHeader #primaryNav {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+/* line 172, ../sass/screen.scss */
+#mainHeader #primaryNav ul {
+  text-align: center;
+  list-style-type: none;
+}
+/* line 177, ../sass/screen.scss */
+#mainHeader #primaryNav li {
+  display: inline;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+/* line 185, ../sass/screen.scss */
+#mainHeader #primaryNav a {
+  text-decoration: none;
+  color: black;
+}
+/* line 188, ../sass/screen.scss */
+#mainHeader #primaryNav a:hover {
+  color: #2277ee;
+}
+/* line 194, ../sass/screen.scss */
+#mainHeader #breadcrumbs {
+  text-align: center;
+}
+/* line 197, ../sass/screen.scss */
+#mainHeader #breadcrumbs .titleBlock {
+  display: inline-block;
+  margin-left: 0.75em;
+  margin-right: 0.75em;
+  margin-bottom: 0.75em;
+}
+/* line 199, ../sass/screen.scss */
+#mainHeader #breadcrumbs .titleBlock h1, #mainHeader #breadcrumbs .titleBlock h2, #mainHeader #breadcrumbs .titleBlock h3, #mainHeader #breadcrumbs .titleBlock h4, #mainHeader #breadcrumbs .titleBlock h5, #mainHeader #breadcrumbs .titleBlock h6 {
+  line-height: 1em;
+  font-weight: normal;
+}
+/* line 211, ../sass/screen.scss */
+#mainHeader #breadcrumbs progress {
+  display: block;
+  width: 100%;
+}
+
+/* line 218, ../sass/screen.scss */
+.rotated {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+/* line 226, ../sass/screen.scss */
+p {
+  margin-bottom: 1.5em;
+}
+
+/* line 230, ../sass/screen.scss */
+#posts {
+  margin: auto;
+}
+
+/* line 234, ../sass/screen.scss */
+aside {
+  margin-top: 16px;
+  font-style: italic;
+  text-align: center;
+}

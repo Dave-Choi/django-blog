@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<title>MD5 Mockup</title>
+<link href="{{ STATIC_URL }}stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="{{ STATIC_URL }}stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+  <!--[if IE]>
+      <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<script src="{{ STATIC_URL }}jquery-1.6.1.min.js"></script>  
+<!--
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script>
+function getAvailableHeight(){
+	//40 is just to account for comfortable padding
+	return $(window).height() - $("#mainHeader").height() - 40;
+
+}
+
+function fitColumns(){
+	/* 	
+		If the column set doesn't fit in the viewport all at once,
+		don't use columns, so you don't have to scroll up and down to read
+		one section.
+
+		If the content of a section is very short, don't bother dividing into
+		columns.  It just makes it disjointed and harder to read.
+	*/
+	var viewportHeight = getAvailableHeight();
+	var singleColClass = "singleCol"
+	$("section .copy").removeClass(singleColClass).filter(function(){
+		var height = $(this).height();
+		var tooTall = height > viewportHeight;
+		var tooShort = height < 200;
+		return tooTall || tooShort;
+	}).addClass(singleColClass);
+}
+
+function activeHeader(){
+	return $("#posts header").filter(function(){
+		if(window.scrollY == 0){
+			return false;
+		}
+		var $this = $(this);
+		var baseline = $this.offset().top;
+		var effectiveScrollPos = window.scrollY + $("#mainHeader").height();
+		return baseline < effectiveScrollPos;
+	}).last();
+}
+
+function headerTrail(source){
+	var buff = "";
+	var ancestors = $(source).parentsUntil("#posts").children("header").each(function(){
+			buff = this.innerHTML + buff;
+	});
+
+	//section.css("background-color", "gray");
+	//console.log(ancestors);
+	return buff;
+}
+
+function headerCrumbs(){
+	var updateBreadcrumbs = function(){
+		var trail = "";
+		var lastHeader = activeHeader();
+		$("#breadcrumbs").html(headerTrail(lastHeader));
+	};
+	$(window).scroll(updateBreadcrumbs);
+	$(window).resize(updateBreadcrumbs);
+}
+
+function progressSection(progressElement){
+	return ($(progressElement).parents("section").eq(0));
+}
+
+function effectiveScrollPos(){
+	//return window.scrollY + $("#mainHeader").height();
+	return window.scrollY + window.innerHeight;
+}
+
+function scrollPercentage(section){
+	// The progress widget will handle underflow and overflow, so don't need to
+	// be that careful about output being negative or over 100%
+	var scrollPos = effectiveScrollPos();
+	var $section = $(section);
+
+	var top = $section.offset().top;
+	var height = $section.height();
+
+	return (scrollPos-top)/height;
+
+}
+
+function progressBars(){
+	//$("header :header").parent().prepend('<div>').append('<br /><progress max="1" value="0"></progress></div>');
+
+	$("header :header").parent().each(function(){
+		$(this).html('<div class="titleBlock">' + $(this).html() + '<progress max="1" value="0"></progress></div>');
+	});
+
+	var updateProgressBars = function(){
+		$("#posts progress").each(function(){
+			var section = progressSection(this);
+			this.value = scrollPercentage(section);
+		});
+	};
+
+	$(window).scroll(updateProgressBars);
+	$(window).resize(updateProgressBars);
+}
+
+$(function(){
+	fitColumns();
+	console.log($(window).resize(fitColumns));
+	//$(window).scroll(fitColumns);
+
+	headerCrumbs();
+	progressBars();
+});
+</script>
+</head>
+
+<body>
+<header id="mainHeader">
+<nav id="primaryNav">
+	<ul>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Hacks</a></li>
+		<li><a href="#">About</a></li>
+	</ul>
+</nav>
+<nav id="breadcrumbs">
+
+</nav>
+</header>
