@@ -1,10 +1,14 @@
-{% if author_list %}
-	{% for author in author_list %}
-		<article>
-			<p>{{author.display_name}}</p>
-			<p>{{ author.blurb }}</p>
-		</article>
-	{% endfor %}
-{% else %}
-	<p>There are no authors.</p>
-{% endif %}
+{% extends "base.html" %}
+
+{% block content %}
+	{% if author_list %}
+		{% for author in author_list %}
+			<article>
+				<p>{{author.display_name}}</p>
+				<p>{{ author.blurb }}</p>
+			</article>
+		{% endfor %}
+	{% else %}
+		<p>There are no authors.</p>
+	{% endif %}
+{% endblock %}

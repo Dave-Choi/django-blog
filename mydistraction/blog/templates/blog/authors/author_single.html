@@ -1,1 +1,12 @@
-Single.
+{% extends "base.html" %}
+
+{% block content %}
+	{% if author %}
+		<article>
+			<p>{{author.display_name}}</p>
+			<p>{{ author.blurb }}</p>
+		</article>
+	{% else %}
+		<p>There are no authors.</p>
+	{% endif %}
+{% endblock %}
