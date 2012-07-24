@@ -1,4 +1,7 @@
 from django.views.generic import ListView
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from forms import PostForm
 import datetime
 
 
@@ -35,3 +38,11 @@ def posts_by_author(request, *args, **kwargs):
         context_object_name = 'post_list',
         template_name = 'blog/posts/posts.html'
     )(request, *args, **kwargs)
+
+
+@login_required
+def post_write(request, *args, **kwargs):
+    form = PostForm()
+    return render(request, 'blog/posts/post_form.html', {
+        'form': form,
+    })

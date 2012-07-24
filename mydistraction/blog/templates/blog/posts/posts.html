@@ -1,4 +1,6 @@
-{% include "header.html" %}
+{% extends "base.html" %}
+
+{% block content %}
 <section id="posts">
 {% if post_list %}
 	{% for post in post_list %}
@@ -13,5 +15,4 @@
 	<p>There are no posts.</p>
 {% endif %}
 </section>
-
-{% include "footer.html" %}
+{% endblock %}

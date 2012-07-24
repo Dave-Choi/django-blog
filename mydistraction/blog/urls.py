@@ -3,7 +3,7 @@ from models import author_name_pattern, author_slug_pattern
 from django.views.generic import DetailView, ListView
 from blog.models import Post, Author
 import re
-from blog.views import posts_by_date, posts_by_author
+from blog.views import posts_by_date, posts_by_author, post_write
 
 
 # Post Patterns
@@ -20,7 +20,7 @@ urlpatterns = patterns('',
 
     # posts by id
     url(
-        r'^posts/($P<pk>\d+)/$',
+        r'^posts/(?P<pk>\d+)/$',
         DetailView.as_view(
             model = Post,
             template_name = 'blog/posts/post_single.html'
@@ -37,6 +37,11 @@ urlpatterns = patterns('',
     url(
         r'^posts/author/(?P<s>%s)/$' % author_slug_pattern,
         posts_by_author
+    ),
+
+    url(
+        r'^posts/write/',
+        post_write
     )
 )
 
