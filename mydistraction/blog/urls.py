@@ -10,7 +10,7 @@ from blog.views import posts_by_date, posts_by_author, post_write
 urlpatterns = patterns('',
     # all posts
     url(
-        r'^posts/$',
+        r'^(posts/)?$',
         ListView.as_view(
             queryset = Post.objects.order_by('-id')[:10],
             context_object_name = 'post_list',
